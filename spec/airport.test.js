@@ -330,5 +330,33 @@ console.log("----------------")
 
 // Clean Up
 afterEach();
+testPlane2 = undefined;
 
 //! End of Test 3
+
+//? User Story 4
+console.log(chalk.blue("USER STORY 4"))
+console.log("----------------------------------")
+
+//* Test 1: Test that planeAtAirport(plane) returns true if the plane is at the airport
+
+console.log("Test 1:")
+console.log("----------------")
+console.log("Test that planeAtAirport(plane) returns true if the plane is at the airport");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+airport.instructPlaneLanding(testPlane);
+// Act
+actual = airport.planeAtAirport(testPlane);
+// Assert
+result = assertTrue(actual);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 1

@@ -24,5 +24,9 @@ export const airport = {
 
     spaceAvailable() {
         return (this.planeList.length < 10);
+    },
+
+    planeAtAirport(plane) {
+        return this.planeList.includes(plane);
     }
 };
