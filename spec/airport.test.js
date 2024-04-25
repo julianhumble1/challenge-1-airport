@@ -486,18 +486,20 @@ afterEach();
 
 //! End of Test 1
 
-//* Test 2: Test that if a plane is the only plane at the airport then we can instruct it to leave
+//* Test 2: Test that if a plane is one of many planes at the airport we can instruct it to leave
 
-console.log("Test 1:")
+console.log("Test 2:")
 console.log("----------------")
-console.log("Test that if a plane is the only plane at the airport then we can instruct it to leave");
+console.log("Test that if a plane is one of many planes at the airport we can instruct it to leave");
 
 // Arrange
 testPlane = { "id": "BA-1"};
 airport.instructPlaneLanding(testPlane);
+testPlane2 = { "id": "BA-2" };
+airport.instructPlaneLanding(testPlane2);
 expected = airport.getPlaneList().length - 1;
 // Act
-airport.instructPlaneTakeoff(testPlane);
+airport.instructPlaneTakeoff(testPlane2);
 // Assert
 actual = airport.getPlaneList().length;
 result = assertEquals(actual, expected);
