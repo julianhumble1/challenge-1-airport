@@ -456,3 +456,57 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 5
+
+//? User Story 5
+console.log(chalk.blue("USER STORY 5"))
+console.log("----------------------------------")
+
+//* Test 1: Test that if a plane is the only plane at the airport then we can instruct it to leave
+
+console.log("Test 1:")
+console.log("----------------")
+console.log("Test that if a plane is the only plane at the airport then we can instruct it to leave");
+
+// Arrange
+testPlane = { "id": "BA-1"};
+airport.instructPlaneLanding(testPlane);
+expected = airport.getPlaneList().length - 1;
+// Act
+airport.instructPlaneTakeoff(testPlane);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 1
+
+//* Test 2: Test that if a plane is the only plane at the airport then we can instruct it to leave
+
+console.log("Test 1:")
+console.log("----------------")
+console.log("Test that if a plane is the only plane at the airport then we can instruct it to leave");
+
+// Arrange
+testPlane = { "id": "BA-1"};
+airport.instructPlaneLanding(testPlane);
+expected = airport.getPlaneList().length - 1;
+// Act
+airport.instructPlaneTakeoff(testPlane);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 2
