@@ -432,3 +432,27 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 4
+
+//* Test 5: Test that if a plane is not already at an airport then we can instruct the plane to land
+
+console.log("Test 5:")
+console.log("----------------")
+console.log("Test that if a plane is not already at an airport then we can instruct the plane to land");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+expected = airport.getPlaneList().length + 1;
+// Act
+airport.instructPlaneLanding(testPlane);
+actual = airport.getPlaneList().length;
+// Assert
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 5
