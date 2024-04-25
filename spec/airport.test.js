@@ -169,5 +169,83 @@ console.log("----------------")
 
 // Clean Up
 afterEach();
+testPlaneList = undefined;
 
 //! End of Test 2
+
+//* Test 3: Test that spaceAvailable() returns true if planeList is shorter than the capacity
+
+console.log("Test 3:")
+console.log("----------------")
+console.log("Test that spaceAvailable() returns true if planeList is shorter than the capacity");
+
+// Arrange
+
+// Act
+actual = airport.spaceAvailable();
+// Assert
+result = assertTrue(actual)
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 3
+
+//* Test 4: Test that I can land a plane if spaceAvailable is true
+
+console.log("Test 4:")
+console.log("----------------")
+console.log("Test that I can land a plane if spaceAvailable is true");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+expected = airport.getPlaneList().length + 1;
+// Act
+airport.instructPlaneLanding(testPlane);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 4
+
+//* Test 5: Test that I am not able to land a plane if spaceAvailable is false
+
+console.log("Test 5:")
+console.log("----------------")
+console.log("Test that I am not able to land a plane if spaceAvailable is false");
+
+// Arrange
+testPlaneList = [{ "id": "BA-1" }, { "id": "BA-2" }, { "id": "BA-3" }, { "id": "BA-4" }, { "id": "BA-5" }, { "id": "BA-6" }, { "id": "BA-7" }, { "id": "BA-8" }, { "id": "BA-9" }, { "id": "BA-10" }];
+
+for (let i = 0; i < testPlaneList.length; i++) {
+    airport.instructPlaneLanding(testPlaneList[i]);
+}
+
+testPlane = { "id": "BA-11"};
+
+expected = airport.getPlaneList().length;
+// Act
+airport.instructPlaneLanding(testPlane);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 5

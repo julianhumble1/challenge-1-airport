@@ -6,7 +6,12 @@ export const airport = {
     },
 
     instructPlaneLanding(plane) {
-        (plane !== null) && this.planeList.push(plane);
+        if (this.spaceAvailable()) {
+            (plane !== null) && this.planeList.push(plane);
+        } else {
+            console.log(`No space available for plane ${plane.id} to land.`);
+        }
+        
     },
 
     spaceAvailable() {
