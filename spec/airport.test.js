@@ -360,3 +360,49 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 1
+
+//* Test 2: Test that planeAtAirport(plane) returns false for an empty airport
+
+console.log("Test 2:")
+console.log("----------------")
+console.log("Test that planeAtAirport(plane) returns false for an empty airport");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+// Act
+actual = airport.planeAtAirport(testPlane);
+// Assert
+result = assertFalse(actual);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 2
+
+//* Test 3: Test that planeAtAirport(plane) returns false if the plane is not at the airport even if there are other planes already
+
+console.log("Test 3:")
+console.log("----------------")
+console.log("Test that planeAtAirport(plane) returns false if the plane is not at the airport even if there are other planes already");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+airport.instructPlaneLanding(testPlane)
+testPlane2 = { "id": "BA-2" };
+// Act
+actual = airport.planeAtAirport(testPlane2);
+// Assert
+result = assertFalse(actual);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 3
