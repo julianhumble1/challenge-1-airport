@@ -1,5 +1,5 @@
 import { airport } from '../src/airport.js';
-import { assertEquals, assertTrue } from './test-framework/testFramework.js';
+import { assertEquals, assertTrue, assertFalse } from './test-framework/testFramework.js';
 import chalk from 'chalk';
 
 const afterEach = () => {
@@ -11,6 +11,8 @@ const afterEach = () => {
 }
 
 //? User Story 1
+console.log(chalk.blue("USER STORY 1"))
+console.log("----------------------------------")
 
 //* Test 1: Test that planeList.length increases by 1 after performing instructPlaneLanding()
 
@@ -110,3 +112,62 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 4
+
+//? User Story 2
+console.log(chalk.blue("USER STORY 2"))
+console.log("----------------------------------")
+
+//* Test 1: Test that spaceAvailable() returns false if planeList is longer than the capacity
+
+console.log("Test 1:")
+console.log("----------------")
+console.log("Test that spaceAvailable() returns false if planeList is longer than the capacity");
+
+// Arrange
+let testPlaneList = [{ "id": "BA-1" }, { "id": "BA-2" }, { "id": "BA-3" }, { "id": "BA-4" }, { "id": "BA-5" }, { "id": "BA-6" }, { "id": "BA-7" }, { "id": "BA-8" }, { "id": "BA-9" }, { "id": "BA-10" }, { "id": "BA-11" }];
+
+for (let i = 0; i < testPlaneList.length; i++) {
+    airport.instructPlaneLanding(testPlaneList[i]);
+}
+
+// Act
+actual = airport.spaceAvailable();
+// Assert
+result = assertFalse(actual);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+testPlaneList = undefined;
+
+//! End of Test 1
+
+//* Test 2: Test that spaceAvailable() returns false if planeList is equal to the capacity
+
+console.log("Test 2:")
+console.log("----------------")
+console.log("Test that spaceAvailable() returns false if planeList is equal to the capacity");
+
+// Arrange
+testPlaneList = [{ "id": "BA-1" }, { "id": "BA-2" }, { "id": "BA-3" }, { "id": "BA-4" }, { "id": "BA-5" }, { "id": "BA-6" }, { "id": "BA-7" }, { "id": "BA-8" }, { "id": "BA-9" }, { "id": "BA-10" }];
+
+for (let i = 0; i < testPlaneList.length; i++) {
+    airport.instructPlaneLanding(testPlaneList[i]);
+}
+
+// Act
+actual = airport.spaceAvailable();
+// Assert
+result = assertFalse(actual);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 2
