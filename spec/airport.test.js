@@ -21,11 +21,11 @@ console.log("Test that planeList.length increases by 1 after performing instruct
 // Arrange
 let expected = airport.getPlaneList().length + 1;
 let actual, result;
-let testPlane = {};
+let testPlane = {id:BA1234};
 // Act
 airport.instructPlaneLanding(testPlane);
 // Assert
-actual = airport.getPlaneList.length();
+actual = airport.getPlaneList().length;
 result = assertEquals(actual, expected);
 // Report
 console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
