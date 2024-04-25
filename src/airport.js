@@ -17,7 +17,7 @@ export const airport = {
         for (let i = 0; i < this.planeList.length; i++) {
             if (plane.id === this.planeList[i].id); {
                 let indexToRemove = i;
-                this.planeList.splice(indexToRemove);
+                this.planeList.splice(indexToRemove,1);
             }
         }
     },
