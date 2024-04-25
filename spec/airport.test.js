@@ -21,7 +21,7 @@ console.log("Test that planeList.length increases by 1 after performing instruct
 // Arrange
 let expected = airport.getPlaneList().length + 1;
 let actual, result;
-let testPlane = {"id":"BA1234"};
+let testPlane = { "id":"BA-1" };
 // Act
 airport.instructPlaneLanding(testPlane);
 // Assert
@@ -44,11 +44,11 @@ console.log("----------------")
 console.log("Test that planeList includes the new plane after performing instructPlaneLanding()");
 
 // Arrange
-testPlane = {"id":"BA1234"};
+testPlane = { "id":"BA-1" };
 // Act
 airport.instructPlaneLanding(testPlane);
-actual = airport.getPlaneList().includes(testPlane);
 // Assert
+actual = airport.getPlaneList().includes(testPlane);
 result = assertTrue(actual);
 // Report
 console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
@@ -57,3 +57,31 @@ console.log("----------------")
 
 // Clean Up
 afterEach();
+
+//! End of Test 2
+
+//* Test 3: Test that the new plane is added for a airport already holding some planes
+
+console.log("Test 3:")
+console.log("----------------")
+console.log("Test that the new plane is added for a airport already holding some planes");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+airport.instructPlaneLanding(testPlane);
+let testPlane2 = { "id": "BA-2" };
+expected = airport.getPlaneList().length + 1;
+// Act
+airport.instructPlaneLanding(testPlane2);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 3
