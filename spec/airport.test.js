@@ -279,3 +279,27 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 1
+
+//* Test 2: Test that after instructing a plane to leave, that plane is no longer in the planeList
+
+console.log("Test 2:")
+console.log("----------------")
+console.log("Test that after instructing a plane to leave, that plane is no longer in the planeList");
+
+// Arrange
+testPlane = { "id": "BA-1" };
+airport.instructPlaneLanding(testPlane);
+// Act
+airport.instructPlaneTakeoff(testPlane);
+// Assert
+actual = airport.getPlaneList().includes(testPlane);
+result = assertFalse(actual);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 2
