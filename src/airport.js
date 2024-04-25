@@ -11,7 +11,15 @@ export const airport = {
         } else {
             console.log(`No space available for plane ${plane.id} to land.`);
         }
-        
+    },
+
+    instructPlaneTakeoff(plane) {
+        for (let i = 0; i < this.planeList.length; i++) {
+            if (plane.id === this.planeList[i].id); {
+                let indexToRemove = i;
+                this.planeList.splice(indexToRemove);
+            }
+        }
     },
 
     spaceAvailable() {
