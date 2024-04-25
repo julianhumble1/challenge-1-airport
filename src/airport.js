@@ -13,7 +13,7 @@ export const airport = {
 
     instructPlaneTakeoff(plane) {
         for (let i = 0; i < this.planeList.length; i++) {
-            if (plane.id === this.planeList[i].id); {
+            if (plane.id === this.planeList[i].id) {
                 let indexToRemove = i;
                 this.planeList.splice(indexToRemove,1);
             }

@@ -537,3 +537,31 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 3
+
+//* Test 4: Test that if there are planes in the airport, but not the one we instruct to leave, the plane can not leave
+
+console.log("Test 4:")
+console.log("----------------")
+console.log("Test that if there are planes in the airport, but not the one we instruct to leave, the plane can not leave");
+
+// Arrange
+testPlane = { "id": "BA-1"};
+airport.instructPlaneLanding(testPlane);
+testPlane2 = { "id": "BA-2" };
+
+expected = airport.getPlaneList().length;
+// Act
+airport.instructPlaneTakeoff(testPlane2);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+testPlane2 = undefined;
+
+//! End of Test 4
