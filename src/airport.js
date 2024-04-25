@@ -6,6 +6,6 @@ export const airport = {
     },
 
     instructPlaneLanding(plane) {
-        this.planeList.push(plane);
+        (plane !== null) && this.planeList.push(plane);
     }
 };

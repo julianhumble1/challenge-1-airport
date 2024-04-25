@@ -83,5 +83,30 @@ console.log("----------------")
 
 // Clean Up
 afterEach();
+testPlane2 = undefined;
 
 //! End of Test 3
+
+//* Test 4: Test that a null 'plane' can not be landed at the airport 
+
+console.log("Test 4:")
+console.log("----------------")
+console.log("Test that a null 'plane' can not be landed at the airport ");
+
+// Arrange
+let testNull = null;
+expected = airport.getPlaneList().length;
+// Act
+airport.instructPlaneLanding(testNull);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 4
