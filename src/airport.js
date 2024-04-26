@@ -23,7 +23,7 @@ export const airport = {
     },
 
     spaceAvailable() {
-        return (this.planeList.length < 10);
+        return (this.planeList.length < this.maxCapacity);
     },
 
     planeAtAirport(plane) {

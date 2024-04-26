@@ -668,3 +668,28 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 4
+
+//* Test 5: Test that if we reduce the capacity to exactly the number of planes in the airport, spaceAvailable() changes from true to false
+
+console.log("Test 5:")
+console.log("----------------")
+console.log("Test that if we reduce the capacity to exactly the number of planes in the airport, spaceAvailable() changes from true to false");
+
+// Arrange
+testPlane = { "id":"BA-1" };
+airport.instructPlaneLanding(testPlane);
+expected - false;
+// Act
+airport.setMaxCapacity(1);
+// Assert
+actual = airport.spaceAvailable();
+result = assertFalse(actual)
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 5
