@@ -1,3 +1,3 @@
 # Domain Models and Test Plan
 
-`![alt text](./screenshots/client-reqs&user-stories.png)`
+![alt text](./screenshots/client-reqs-and-user-stories.png)
