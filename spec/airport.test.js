@@ -643,3 +643,28 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 3
+
+//* Test 4: Test that we are able to reduce the capacity to exactly the number of planes currently in the airport
+
+console.log("Test 4:")
+console.log("----------------")
+console.log("Test that we are able to reduce the capacity to exactly the number of planes currently in the airport");
+
+// Arrange
+testPlane = { "id":"BA-1" };
+airport.instructPlaneLanding(testPlane);
+expected = 1;
+// Act
+airport.setMaxCapacity(1);
+// Assert
+actual = airport.getMaxCapacity();
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 4

@@ -31,7 +31,7 @@ export const airport = {
     },
 
     setMaxCapacity(newCapacity) {
-        (newCapacity > this.planeList.length) && (this.maxCapacity = newCapacity);
+        (newCapacity >= this.planeList.length) && (this.maxCapacity = newCapacity);
     },
 
     getMaxCapacity() {
