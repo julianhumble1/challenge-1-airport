@@ -8,6 +8,7 @@ const afterEach = () => {
     result = undefined;
     testPlane = undefined;
     airport.planeList = [];
+    airport.setMaxCapacity(10);
 }
 
 //? User Story 1
@@ -565,3 +566,30 @@ afterEach();
 testPlane2 = undefined;
 
 //! End of Test 4
+
+//? User Story 6
+console.log(chalk.blue("USER STORY 6"))
+console.log("----------------------------------")
+
+//* Test 1: Test that after using setMaxCapacity(), the airport's capacity has changed to the inputted capacity
+
+console.log("Test 1:")
+console.log("----------------")
+console.log("Test that after using setMaxCapacity(), the airport's capacity has changed to the inputted capacity");
+
+// Arrange
+expected = 5;
+// Act
+airport.setMaxCapacity(5);
+// Assert
+actual = airport.getMaxCapacity();
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 1

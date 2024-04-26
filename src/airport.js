@@ -1,5 +1,7 @@
 export const airport = {
-    planeList : [],
+    planeList: [],
+    
+    maxCapacity : 10,
 
     getPlaneList() {
         return this.planeList;
@@ -26,5 +28,13 @@ export const airport = {
 
     planeAtAirport(plane) {
         return this.planeList.includes(plane);
+    },
+
+    setMaxCapacity(newCapacity) {
+        this.maxCapacity = newCapacity;
+    },
+
+    getMaxCapacity() {
+        return this.maxCapacity;
     }
 };
