@@ -25,7 +25,7 @@ So that they are able to land successfully
 * Test that the new plane is added for a airport already holding some planes
 * Test that a null 'plane' can not be landed at the airport 
 ---
-*User Story 2*
+*User Story 2:*
 As an air traffic controller
 I want to be unable to instruct planes from landing if the airport is full
 So that there are no collisions
@@ -45,7 +45,7 @@ So that it goes to its destination
 * Test that after instructing a plane to leave, that plane is no longer in the planeList
 * Test that we can instruct a plane to leave if there are multiple planes in the airport to start with
 ---
-*User Story 4*
+*User Story 4:*
 As an air traffic controller
 I want to not be able to instruct a plane to land that is already at the airport
 So that there are no errors
@@ -56,7 +56,7 @@ So that there are no errors
 * Test that if a plane is already at an airport then we can't instruct the plane to land
 * Test that if a plane is not already at an airport then we can instruct the plane to land
 ---
-*User Story 5*
+*User Story 5:*
 As an air traffic controller
 I want to be unable to instruct planes to take off if it is not already at the airport
 So that there is no confusion
@@ -66,7 +66,7 @@ So that there is no confusion
 * Test that we can't instruct a plane to leave if they airport is empty
 * Test that if there are planes in the airport, but not the one we instruct to leave, the plane can not leave
 ---
-*User Story 6*
+*User Story 6:*
 As an air traffic controller
 I want to be able to change the maximum capacity of the airport
 So that any changes to the airport can be incorporated to the software
