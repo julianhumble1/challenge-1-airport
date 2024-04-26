@@ -593,3 +593,28 @@ console.log("----------------")
 afterEach();
 
 //! End of Test 1
+
+//* Test 2: Test that increasing the capacity does not affect the number of planes already in the airport
+
+console.log("Test 2:")
+console.log("----------------")
+console.log("Test that increasing the capacity does not affect the number of planes already in the airport");
+
+// Arrange
+testPlane = { "id":"BA-1" };
+airport.instructPlaneLanding(testPlane);
+expected = airport.getPlaneList().length;
+// Act
+airport.setMaxCapacity(11);
+// Assert
+actual = airport.getPlaneList().length;
+result = assertEquals(actual, expected);
+// Report
+console.log(result ? chalk.green("Pass") : chalk.red("Fail"));
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+console.log("----------------")
+
+// Clean Up
+afterEach();
+
+//! End of Test 2
